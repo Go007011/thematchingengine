@@ -1,0 +1,19 @@
+<header class="navbar navbar-expand-md d-print-none topbar-shell">
+  <div class="container-xl">
+    <div class="d-flex flex-column">
+      <div class="page-pretitle">{{ dashboard.header.eyebrow }}</div>
+      <h1 class="page-title">{{ title }}</h1>
+      <div class="text-secondary">{{ description }}</div>
+    </div>
+    <div class="ms-auto d-flex align-items-center gap-3">
+      <span class="status-pill">
+        <span class="status-pill-dot"></span>
+        {{ dashboard.header.status }}
+      </span>
+      <div class="text-end d-none d-md-block">
+        <div class="fw-semibold">System state</div>
+        <div class="text-secondary small">{{ dashboard.header.statusDetail }}</div>
+      </div>
+    </div>
+  </div>
+</header>

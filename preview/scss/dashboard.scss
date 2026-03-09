@@ -1,0 +1,216 @@
+:root {
+  --me-ink: #10233f;
+  --me-panel: rgba(255, 255, 255, 0.88);
+  --me-border: rgba(23, 71, 199, 0.12);
+  --me-glow: radial-gradient(circle at top left, rgba(23, 71, 199, 0.24), transparent 42%);
+  --tblr-font-sans-serif: "Manrope", sans-serif;
+}
+
+body.dashboard-app {
+  color: var(--me-ink);
+  background:
+    linear-gradient(180deg, rgba(228, 236, 255, 0.92) 0%, rgba(244, 247, 252, 0.96) 42%, #f7f8fb 100%);
+}
+
+.dashboard-app .page {
+  min-height: 100vh;
+}
+
+.sidebar-shell {
+  background:
+    linear-gradient(180deg, rgba(16, 35, 63, 0.98) 0%, rgba(22, 47, 83, 0.96) 100%);
+  color: #f7f9ff;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.sidebar-shell .navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 1rem 0 1.5rem;
+}
+
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 0.9rem;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  background: linear-gradient(135deg, #7ea6ff 0%, #d8e4ff 100%);
+  color: #14336c;
+}
+
+.brand-title {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.brand-subtitle {
+  font-size: 0.75rem;
+  color: rgba(229, 236, 255, 0.72);
+}
+
+.sidebar-shell .nav-link {
+  border-radius: 0.9rem;
+  color: rgba(242, 246, 255, 0.82);
+  margin-bottom: 0.35rem;
+  padding: 0.85rem 0.9rem;
+}
+
+.sidebar-shell .nav-link:hover,
+.sidebar-shell .nav-item.active .nav-link {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-status {
+  margin-top: 1rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #eef4ff;
+}
+
+.topbar-shell {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  backdrop-filter: blur(18px);
+  background: rgba(247, 249, 253, 0.82);
+  border-bottom: 1px solid var(--me-border);
+}
+
+.topbar-shell .container-xl {
+  padding-top: 1.2rem;
+  padding-bottom: 1.2rem;
+}
+
+.page-title {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.55rem 0.85rem;
+  border-radius: 999px;
+  background: #eff4ff;
+  border: 1px solid rgba(23, 71, 199, 0.14);
+  color: #14336c;
+  font-weight: 700;
+}
+
+.status-pill-dot {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 999px;
+  background: #2fb344;
+  box-shadow: 0 0 0 0.25rem rgba(47, 179, 68, 0.16);
+}
+
+.module-shell {
+  position: relative;
+  padding: 1.5rem 0 2rem;
+}
+
+.module-shell::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: var(--me-glow);
+  opacity: 0.8;
+}
+
+.module-shell-loading {
+  opacity: 0.7;
+  transition: opacity 160ms ease;
+}
+
+.dashboard-grid {
+  position: relative;
+  display: grid;
+  gap: 1rem;
+}
+
+.stat-card,
+.module-card,
+.shell-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--me-border);
+  background: var(--me-panel);
+  box-shadow: 0 18px 50px rgba(18, 36, 65, 0.08);
+}
+
+.stat-card::after,
+.shell-card::after {
+  content: "";
+  position: absolute;
+  inset: auto -10% -50% auto;
+  width: 11rem;
+  height: 11rem;
+  border-radius: 999px;
+  background: rgba(23, 71, 199, 0.08);
+}
+
+.module-card-accent {
+  width: 3.5rem;
+  height: 0.35rem;
+  border-radius: 999px;
+  margin-bottom: 1rem;
+}
+
+.module-shell .card-title {
+  font-weight: 700;
+}
+
+.signal-list {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.signal-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.95rem 1rem;
+  border-radius: 1rem;
+  background: rgba(245, 248, 255, 0.95);
+  border: 1px solid rgba(23, 71, 199, 0.08);
+}
+
+.signal-meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.module-frame {
+  min-height: 18rem;
+}
+
+.module-frame .display-7 {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+}
+
+.footer {
+  padding-bottom: 1.5rem;
+}
+
+@media (min-width: 992px) {
+  .dashboard-grid-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .dashboard-grid-2 {
+    grid-template-columns: 1.3fr 0.7fr;
+  }
+}

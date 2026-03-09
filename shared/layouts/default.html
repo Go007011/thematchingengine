@@ -1,0 +1,18 @@
+---
+layout: base
+---
+
+<div class="page">
+  {% include "layout/sidebar.html" %}
+  <div class="page-wrapper">
+    {% include "layout/header.html" %}
+    <main id="content" class="page-body">
+      <div class="container-xl">
+        <section class="module-shell" data-module-shell>
+          {{ content }}
+        </section>
+      </div>
+    </main>
+    {% include "layout/footer.html" %}
+  </div>
+</div>

@@ -1,0 +1,17 @@
+<!doctype html>
+{% include "layout/banner.html" %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="theme-color" content="{{ site.themeColor }}" />
+    <title>{% if title %}{{ title }} | {% endif %}{{ site.title }}</title>
+    <meta name="description" content="{{ description | default: site.description }}" />
+    {% include "layout/css.html" %}
+  </head>
+  <body class="dashboard-app">
+    {{ content }}
+    {% include "layout/js.html" %}
+  </body>
+</html>

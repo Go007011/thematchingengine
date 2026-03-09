@@ -1,0 +1,46 @@
+---
+layout: default
+permalink: dashboard/notifications/index.html
+title: Notifications
+description: Module shell for workflow alerts, webhook events, and time-based follow-up triggers.
+menu_key: notifications
+---
+
+{% assign items = '
+[
+  {"title":"Alert policy layer","detail":"Room reserved for priority routing, owner assignment, and acknowledgement state.","badge":"Planned","badge_color":"azure"},
+  {"title":"Outbound channels","detail":"Ready to connect email, chat, or internal webhook outputs in the next phase.","badge":"Planned","badge_color":"azure"}
+]
+' | parse_json %}
+
+<div class="dashboard-grid dashboard-grid-2">
+  <article class="card shell-card module-frame">
+    <div class="card-header">
+      <h3 class="card-title">Notification center shell</h3>
+    </div>
+    <div class="card-body">
+      <div class="display-7 mb-2">Alert routing prepared</div>
+      <p class="text-secondary mb-4">
+        The notification layer is ready to receive webhook events, timer expirations, and admin-generated reminders as soon as data services are connected.
+      </p>
+      <div class="signal-list">
+        <div class="signal-item">
+          <div class="signal-meta">
+            <strong>Webhook listeners</strong>
+            <span class="text-secondary small">Reserved for inbound event normalization</span>
+          </div>
+          <span class="badge bg-blue-lt text-blue">Stub ready</span>
+        </div>
+        <div class="signal-item">
+          <div class="signal-meta">
+            <strong>Deal timer services</strong>
+            <span class="text-secondary small">Reserved for deadline-driven reminders and escalations</span>
+          </div>
+          <span class="badge bg-blue-lt text-blue">Stub ready</span>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  {% include "cards/list.html" title="Alert strategy" items=items %}
+</div>

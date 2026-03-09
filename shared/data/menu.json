@@ -1,0 +1,32 @@
+{
+  "overview": {
+    "title": "Dashboard Overview",
+    "icon": "layout-dashboard",
+    "url": "dashboard/overview/index.html"
+  },
+  "opportunities": {
+    "title": "Deal Opportunities",
+    "icon": "briefcase-2",
+    "url": "dashboard/opportunities/index.html"
+  },
+  "participation": {
+    "title": "Participation",
+    "icon": "users-group",
+    "url": "dashboard/participation/index.html"
+  },
+  "documents": {
+    "title": "Documents",
+    "icon": "file-text",
+    "url": "dashboard/documents/index.html"
+  },
+  "notifications": {
+    "title": "Notifications",
+    "icon": "bell-ringing",
+    "url": "dashboard/notifications/index.html"
+  },
+  "admin-builder": {
+    "title": "Admin Builder",
+    "icon": "settings-automation",
+    "url": "dashboard/admin-builder/index.html"
+  }
+}

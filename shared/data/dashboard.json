@@ -1,0 +1,41 @@
+{
+  "header": {
+    "eyebrow": "Capital Matching Platform",
+    "status": "Preparation mode",
+    "statusDetail": "Ready for deal data loading"
+  },
+  "overviewStats": [
+    {
+      "label": "Opportunity pipelines",
+      "value": "06",
+      "trend": "Dashboard modules staged"
+    },
+    {
+      "label": "Service connectors",
+      "value": "04",
+      "trend": "Azure, Sheets, webhooks, timers"
+    },
+    {
+      "label": "Data readiness",
+      "value": "100%",
+      "trend": "Environment placeholders defined"
+    }
+  ],
+  "moduleCards": [
+    {
+      "title": "Deal ingestion",
+      "description": "Prepare inbound opportunity records from spreadsheets, uploads, and partner feeds.",
+      "accent": "blue"
+    },
+    {
+      "title": "Participation tracking",
+      "description": "Capture investor participation, commitment stages, and follow-up ownership.",
+      "accent": "azure"
+    },
+    {
+      "title": "Operations alerts",
+      "description": "Route time-sensitive notifications from timers, webhooks, and workflow exceptions.",
+      "accent": "green"
+    }
+  ]
+}

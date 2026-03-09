@@ -1,0 +1,46 @@
+---
+layout: default
+permalink: dashboard/admin-builder/index.html
+title: Admin Builder
+description: Configuration shell for future schema controls, field mapping, and dashboard governance.
+menu_key: admin-builder
+---
+
+{% assign items = '
+[
+  {"title":"UI composition","detail":"Tabler cards and layout system are in place for form builders and admin controls.","badge":"Ready","badge_color":"green"},
+  {"title":"Backend handoff","detail":"Service stubs provide clear expansion points for secure admin operations.","badge":"Ready","badge_color":"green"}
+]
+' | parse_json %}
+
+<div class="dashboard-grid dashboard-grid-2">
+  <article class="card shell-card module-frame">
+    <div class="card-header">
+      <h3 class="card-title">Admin builder shell</h3>
+    </div>
+    <div class="card-body">
+      <div class="display-7 mb-2">Governance layer staged</div>
+      <p class="text-secondary mb-4">
+        Use this module in the next phase to define field mappings, role-based controls, and pipeline configuration without disturbing the dashboard shell.
+      </p>
+      <div class="signal-list">
+        <div class="signal-item">
+          <div class="signal-meta">
+            <strong>Role protection</strong>
+            <span class="text-secondary small">Reserved for DASHBOARD_ADMIN_ROLE enforcement</span>
+          </div>
+          <span class="badge bg-green-lt text-green">Placeholder set</span>
+        </div>
+        <div class="signal-item">
+          <div class="signal-meta">
+            <strong>Field mapping</strong>
+            <span class="text-secondary small">Ready to align Sheets columns and Azure payloads</span>
+          </div>
+          <span class="badge bg-green-lt text-green">Placeholder set</span>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  {% include "cards/list.html" title="Builder readiness" items=items %}
+</div>

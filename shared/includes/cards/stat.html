@@ -1,0 +1,11 @@
+<article class="card stat-card stat-card-{{ include.color | default: 'blue' }}">
+  <div class="card-body">
+    <div class="text-uppercase text-secondary small mb-2">{{ include.label }}</div>
+    <div class="d-flex align-items-end justify-content-between gap-3">
+      <div class="display-6 fw-bold mb-0">{{ include.value }}</div>
+      <span class="badge bg-{{ include.color | default: 'blue' }}-lt text-{{ include.color | default: 'blue' }}">
+        {{ include.trend }}
+      </span>
+    </div>
+  </div>
+</article>

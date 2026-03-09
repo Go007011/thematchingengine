@@ -1,0 +1,39 @@
+---
+layout: default
+permalink: dashboard/documents/index.html
+title: Documents
+description: Landing area for diligence files, subscription packets, and secure outbound document automation.
+menu_key: documents
+---
+
+{% assign items = '
+[
+  {"title":"Webhook signature support","detail":"WEBHOOK_SECRET placeholder is committed for secure intake.","badge":"Ready","badge_color":"green"},
+  {"title":"Azure handoff","detail":"Document automation can bind to the Azure Functions stub without reshaping the shell.","badge":"Ready","badge_color":"green"}
+]
+' | parse_json %}
+
+<div class="dashboard-grid dashboard-grid-2">
+  <article class="card shell-card module-frame">
+    <div class="card-header">
+      <h3 class="card-title">Document center shell</h3>
+    </div>
+    <div class="card-body">
+      <div class="display-7 mb-2">Ready for file workflows</div>
+      <p class="text-secondary mb-4">
+        Connect this module to cloud storage or Azure endpoints when the next phase begins loading diligence packets and participation documents.
+      </p>
+      <div class="signal-list">
+        <div class="signal-item">
+          <div class="signal-meta">
+            <strong>Document registry</strong>
+            <span class="text-secondary small">Prepared for subscription docs, teasers, decks, and approvals</span>
+          </div>
+          <span class="badge bg-azure-lt text-azure">Planned</span>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  {% include "cards/list.html" title="Automation prep" items=items %}
+</div>

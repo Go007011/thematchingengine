@@ -1,0 +1,67 @@
+---
+layout: default
+permalink: dashboard/overview/index.html
+title: Dashboard Overview
+description: Control center for deal loading, participation workflows, and system readiness.
+menu_key: overview
+---
+
+<div class="dashboard-grid dashboard-grid-3 mb-4">
+  {% for stat in dashboard.overviewStats %}
+  {% include "cards/stat.html" label=stat.label value=stat.value trend=stat.trend color="blue" %}
+  {% endfor %}
+</div>
+
+<div class="dashboard-grid dashboard-grid-3 mb-4">
+  {% for card in dashboard.moduleCards %}
+  {% include "cards/module.html" title=card.title description=card.description accent=card.accent %}
+  {% endfor %}
+</div>
+
+{% assign readiness_items = '
+[
+  {"title":"UI shell","detail":"Sidebar, topbar, cards, and module body wired into Tabler.","badge":"Ready","badge_color":"green"},
+  {"title":"Folder structure","detail":"Dashboard and services directories created for the next build phase.","badge":"Ready","badge_color":"green"},
+  {"title":"Environment layer","detail":".env.example documents the expected Azure, Sheets, webhook, and role variables.","badge":"Ready","badge_color":"green"}
+]
+' | parse_json %}
+
+<div class="dashboard-grid dashboard-grid-2">
+  <article class="card shell-card module-frame">
+    <div class="card-header">
+      <h3 class="card-title">Module loading container</h3>
+      <div class="card-actions text-secondary small">Last updated <span data-last-updated></span></div>
+    </div>
+    <div class="card-body">
+      <div class="display-7 mb-2">Ready for record ingestion</div>
+      <p class="text-secondary mb-4">
+        This shell is prepared to host live deal, document, notification, and participation modules as data connectors come online.
+      </p>
+      <div class="signal-list">
+        <div class="signal-item">
+          <div class="signal-meta">
+            <strong>Azure Functions connector</strong>
+            <span class="text-secondary small">Endpoint placeholder committed</span>
+          </div>
+          <span class="badge bg-blue-lt text-blue">Stub ready</span>
+        </div>
+        <div class="signal-item">
+          <div class="signal-meta">
+            <strong>Google Sheets loader</strong>
+            <span class="text-secondary small">Service account variable reserved</span>
+          </div>
+          <span class="badge bg-azure-lt text-azure">Stub ready</span>
+        </div>
+        <div class="signal-item">
+          <div class="signal-meta">
+            <strong>Webhook intake</strong>
+            <span class="text-secondary small">Secret placeholder and listener scaffold added</span>
+          </div>
+          <span class="badge bg-green-lt text-green">Stub ready</span>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  {% include "cards/list.html" title="Readiness checklist" items=readiness_items %}
+</div>

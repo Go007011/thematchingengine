@@ -1,0 +1,14 @@
+{
+  "title": "The Matching Engine",
+  "descriptionShort": "Capital opportunity dashboard shell",
+  "description": "A focused Tabler-based workspace prepared for deal data, participation records, documents, and operational automation.",
+  "themeColor": "#1747c7",
+  "homepage": "https://github.com/Go007011/thematchingengine",
+  "docsUrl": "#",
+  "previewUrl": "/dashboard/overview/",
+  "githubUrl": "https://github.com/Go007011/thematchingengine",
+  "githubSponsorsUrl": "#",
+  "supportEmail": "ops@matchingengine.local",
+  "useIconfont": true,
+  "cssPlugins": []
+}

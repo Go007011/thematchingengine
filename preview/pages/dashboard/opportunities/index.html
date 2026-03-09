@@ -1,0 +1,48 @@
+---
+layout: default
+permalink: dashboard/opportunities/index.html
+title: Deal Opportunities
+description: Empty container for pipeline records, prioritization signals, and capital-fit scoring.
+menu_key: opportunities
+---
+
+{% assign items = '
+[
+  {"title":"Sheet import adapter","detail":"services/googleSheets/index.ts exposes a loading stub for opportunity rows.","badge":"Stub","badge_color":"blue"},
+  {"title":"Webhook enrichment","detail":"services/webhooks/index.ts is ready for partner notifications and postbacks.","badge":"Stub","badge_color":"blue"},
+  {"title":"Azure actions","detail":"services/azureFunctions/index.ts reserves async processing hooks.","badge":"Stub","badge_color":"blue"}
+]
+' | parse_json %}
+
+<div class="dashboard-grid dashboard-grid-2">
+  <article class="card shell-card module-frame">
+    <div class="card-header">
+      <h3 class="card-title">Opportunity pipeline shell</h3>
+      <div class="card-actions text-secondary small">Awaiting data source binding</div>
+    </div>
+    <div class="card-body">
+      <div class="display-7 mb-2">Structured for deal imports</div>
+      <p class="text-secondary mb-4">
+        Use this module to load deal records from Google Sheets or Azure-backed APIs, then map them into active, review, and closed stages.
+      </p>
+      <div class="signal-list">
+        <div class="signal-item">
+          <div class="signal-meta">
+            <strong>Inbound fields</strong>
+            <span class="text-secondary small">Issuer, raise size, sector, timing, sponsor contacts</span>
+          </div>
+          <span class="badge bg-blue-lt text-blue">Planned</span>
+        </div>
+        <div class="signal-item">
+          <div class="signal-meta">
+            <strong>Qualification layer</strong>
+            <span class="text-secondary small">Scoring hook reserved for downstream rules</span>
+          </div>
+          <span class="badge bg-azure-lt text-azure">Planned</span>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  {% include "cards/list.html" title="Connector touchpoints" items=items %}
+</div>

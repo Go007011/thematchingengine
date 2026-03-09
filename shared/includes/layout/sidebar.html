@@ -1,0 +1,47 @@
+<aside class="navbar navbar-vertical navbar-expand-lg sidebar-shell">
+  <div class="container-fluid">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#dashboard-sidebar"
+      aria-controls="dashboard-sidebar"
+      aria-expanded="false"
+      aria-label="Toggle dashboard navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-brand navbar-brand-autodark">
+      <div class="brand-mark">TM</div>
+      <div>
+        <div class="brand-title">{{ site.title }}</div>
+        <div class="brand-subtitle">Tabler shell ready</div>
+      </div>
+    </div>
+    <div class="collapse navbar-collapse" id="dashboard-sidebar">
+      <ul class="navbar-nav pt-lg-3">
+        {% for item in menu %}
+        {% assign key = item[0] %}
+        {% assign entry = item[1] %}
+        <li class="nav-item{% if key == menu_key %} active{% endif %}">
+          <a class="nav-link module-nav-link" href="{{ page | relative }}/{{ entry.url }}" data-nav-link>
+            <span class="nav-link-icon">
+              {% include "ui/icon.html" icon=entry.icon %}
+            </span>
+            <span class="nav-link-title">{{ entry.title }}</span>
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+      <div class="sidebar-status card mt-auto">
+        <div class="card-body">
+          <div class="text-uppercase text-secondary small mb-2">Deployment readiness</div>
+          <div class="h3 mb-2">Configured</div>
+          <div class="text-secondary">
+            UI shell, connectors, and environment placeholders are staged for application data onboarding.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</aside>
