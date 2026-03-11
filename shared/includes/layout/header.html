@@ -1,18 +1,22 @@
-<header class="navbar navbar-expand-md d-print-none topbar-shell">
+<header class="page-header d-print-none page-header-overlap-shell">
   <div class="container-xl">
-    <div class="d-flex flex-column">
-      <div class="page-pretitle">{{ dashboard.header.eyebrow }}</div>
-      <h1 class="page-title">{{ title }}</h1>
-      <div class="text-secondary">{{ description }}</div>
-    </div>
-    <div class="ms-auto d-flex align-items-center gap-3">
-      <span class="status-pill">
-        <span class="status-pill-dot"></span>
-        {{ dashboard.header.status }}
-      </span>
-      <div class="text-end d-none d-md-block">
-        <div class="fw-semibold">System state</div>
-        <div class="text-secondary small">{{ dashboard.header.statusDetail }}</div>
+    <div class="row align-items-end g-4">
+      <div class="col-lg">
+        <div class="page-pretitle text-blue-200">{{ dashboard.header.eyebrow }}</div>
+        <h1 class="page-title text-white mb-2">{{ title }}</h1>
+        <div class="page-header-description text-blue-100">{{ description }}</div>
+      </div>
+      <div class="col-lg-auto">
+        <div class="page-header-status">
+          <span class="status-pill" data-api-status-badge>
+            <span class="status-pill-dot"></span>
+            <span data-api-status-label>{{ dashboard.header.status }}</span>
+          </span>
+          <div class="status-summary">
+            <div class="fw-semibold text-white">System status</div>
+            <div class="text-blue-100 small" data-api-status-detail>{{ dashboard.header.statusDetail }}</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

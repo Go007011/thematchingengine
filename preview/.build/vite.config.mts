@@ -13,7 +13,7 @@ export default createViteConfig({
   name: 'dashboard',
   fileName: () => 'dashboard.js',
   formats: ['es'],
-  outDir: path.resolve(__dirname, '../dist/preview/js'),
+  outDir: path.resolve(__dirname, '../../dist/preview/js'),
   banner: bannerText,
   minify: false
 })

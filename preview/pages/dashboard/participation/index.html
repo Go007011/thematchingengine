@@ -6,41 +6,35 @@ description: Prepared workspace for commitments, investor workflow state, and fo
 menu_key: participation
 ---
 
-{% assign items = '
-[
-  {"title":"Role guard placeholder","detail":"DASHBOARD_ADMIN_ROLE is documented for future admin access rules.","badge":"Configured","badge_color":"green"},
-  {"title":"Timer hooks","detail":"services/dealTimer/index.ts reserves countdown and SLA logic.","badge":"Configured","badge_color":"green"}
-]
-' | parse_json %}
+<div class="row row-cards mb-4">
+  <div class="col-12">
+    <article class="card">
+      <div class="card-header">
+        <h3 class="card-title">Participation tracking</h3>
+        <div class="card-actions text-secondary small">Live orders feed</div>
+      </div>
+      <div class="card-body">
+        <p class="text-secondary mb-0">
+          Capital partner commitments from current platform activity will appear here with investor, amount,
+          participation date, and reference details.
+        </p>
+      </div>
+    </article>
+  </div>
+</div>
 
-<div class="dashboard-grid dashboard-grid-2">
-  <article class="card shell-card module-frame">
-    <div class="card-header">
-      <h3 class="card-title">Participation management shell</h3>
-    </div>
-    <div class="card-body">
-      <div class="display-7 mb-2">Investor coordination ready</div>
-      <p class="text-secondary mb-4">
-        This module is reserved for allocations, commitment status, document completion, and internal ownership workflows.
-      </p>
-      <div class="signal-list">
-        <div class="signal-item">
-          <div class="signal-meta">
-            <strong>Participation records</strong>
-            <span class="text-secondary small">Contact, amount, stage, and diligence checkpoints</span>
-          </div>
-          <span class="badge bg-green-lt text-green">Planned</span>
-        </div>
-        <div class="signal-item">
-          <div class="signal-meta">
-            <strong>Follow-up queues</strong>
-            <span class="text-secondary small">Notifications module can surface stale commitments</span>
-          </div>
-          <span class="badge bg-green-lt text-green">Planned</span>
+<div class="row row-cards">
+  <div class="col-12" data-participation-grid>
+    <article class="card">
+      <div class="card-body">
+        <div class="empty">
+          <div class="empty-header">--</div>
+          <p class="empty-title">Loading participation</p>
+          <p class="empty-subtitle text-secondary">
+            Waiting for the dashboard to return current participation records.
+          </p>
         </div>
       </div>
-    </div>
-  </article>
-
-  {% include "cards/list.html" title="Workflow readiness" items=items %}
+    </article>
+  </div>
 </div>

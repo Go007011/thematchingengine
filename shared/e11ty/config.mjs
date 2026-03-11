@@ -1,5 +1,5 @@
 export function appConfig(eleventyConfig) {
-  eleventyConfig.setOutputDirectory('dist')
+  eleventyConfig.setOutputDirectory('../dist')
   eleventyConfig.setInputDirectory('pages')
 
   eleventyConfig.setLayoutsDirectory('../../shared/layouts')

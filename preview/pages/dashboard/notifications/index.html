@@ -6,41 +6,35 @@ description: Module shell for workflow alerts, webhook events, and time-based fo
 menu_key: notifications
 ---
 
-{% assign items = '
-[
-  {"title":"Alert policy layer","detail":"Room reserved for priority routing, owner assignment, and acknowledgement state.","badge":"Planned","badge_color":"azure"},
-  {"title":"Outbound channels","detail":"Ready to connect email, chat, or internal webhook outputs in the next phase.","badge":"Planned","badge_color":"azure"}
-]
-' | parse_json %}
+<div class="row row-cards mb-4">
+  <div class="col-12">
+    <article class="card">
+      <div class="card-header">
+        <h3 class="card-title">System alerts</h3>
+        <div class="card-actions text-secondary small">Derived from current platform activity</div>
+      </div>
+      <div class="card-body">
+        <p class="text-secondary mb-0">
+          Alert activity is generated from deals, participation records, and summary warnings until a dedicated
+          alert source is introduced.
+        </p>
+      </div>
+    </article>
+  </div>
+</div>
 
-<div class="dashboard-grid dashboard-grid-2">
-  <article class="card shell-card module-frame">
-    <div class="card-header">
-      <h3 class="card-title">Notification center shell</h3>
-    </div>
-    <div class="card-body">
-      <div class="display-7 mb-2">Alert routing prepared</div>
-      <p class="text-secondary mb-4">
-        The notification layer is ready to receive webhook events, timer expirations, and admin-generated reminders as soon as data services are connected.
-      </p>
-      <div class="signal-list">
-        <div class="signal-item">
-          <div class="signal-meta">
-            <strong>Webhook listeners</strong>
-            <span class="text-secondary small">Reserved for inbound event normalization</span>
-          </div>
-          <span class="badge bg-blue-lt text-blue">Stub ready</span>
-        </div>
-        <div class="signal-item">
-          <div class="signal-meta">
-            <strong>Deal timer services</strong>
-            <span class="text-secondary small">Reserved for deadline-driven reminders and escalations</span>
-          </div>
-          <span class="badge bg-blue-lt text-blue">Stub ready</span>
+<div class="row row-cards">
+  <div class="col-12" data-notifications-grid>
+    <article class="card">
+      <div class="card-body">
+        <div class="empty">
+          <div class="empty-header">--</div>
+          <p class="empty-title">Loading alerts</p>
+          <p class="empty-subtitle text-secondary">
+            Waiting for the dashboard to assemble alert activity from current system updates.
+          </p>
         </div>
       </div>
-    </div>
-  </article>
-
-  {% include "cards/list.html" title="Alert strategy" items=items %}
+    </article>
+  </div>
 </div>

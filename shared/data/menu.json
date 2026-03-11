@@ -24,9 +24,14 @@
     "icon": "bell-ringing",
     "url": "dashboard/notifications/index.html"
   },
-  "admin-builder": {
+  "calendar": {
+    "title": "Calendar",
+    "icon": "calendar-event",
+    "url": "dashboard/calendar/index.html"
+  },
+  "admin": {
     "title": "Admin Builder",
     "icon": "settings-automation",
-    "url": "dashboard/admin-builder/index.html"
+    "url": "dashboard/admin/index.html"
   }
 }

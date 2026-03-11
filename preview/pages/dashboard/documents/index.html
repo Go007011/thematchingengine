@@ -6,34 +6,35 @@ description: Landing area for diligence files, subscription packets, and secure 
 menu_key: documents
 ---
 
-{% assign items = '
-[
-  {"title":"Webhook signature support","detail":"WEBHOOK_SECRET placeholder is committed for secure intake.","badge":"Ready","badge_color":"green"},
-  {"title":"Azure handoff","detail":"Document automation can bind to the Azure Functions stub without reshaping the shell.","badge":"Ready","badge_color":"green"}
-]
-' | parse_json %}
+<div class="row row-cards mb-4">
+  <div class="col-12">
+    <article class="card">
+      <div class="card-header">
+        <h3 class="card-title">Document center</h3>
+        <div class="card-actions text-secondary small">Current platform activity</div>
+      </div>
+      <div class="card-body">
+        <p class="text-secondary mb-0">
+          Deal and participation documents will appear here using current platform activity until a
+          dedicated document source is added.
+        </p>
+      </div>
+    </article>
+  </div>
+</div>
 
-<div class="dashboard-grid dashboard-grid-2">
-  <article class="card shell-card module-frame">
-    <div class="card-header">
-      <h3 class="card-title">Document center shell</h3>
-    </div>
-    <div class="card-body">
-      <div class="display-7 mb-2">Ready for file workflows</div>
-      <p class="text-secondary mb-4">
-        Connect this module to cloud storage or Azure endpoints when the next phase begins loading diligence packets and participation documents.
-      </p>
-      <div class="signal-list">
-        <div class="signal-item">
-          <div class="signal-meta">
-            <strong>Document registry</strong>
-            <span class="text-secondary small">Prepared for subscription docs, teasers, decks, and approvals</span>
-          </div>
-          <span class="badge bg-azure-lt text-azure">Planned</span>
+<div class="row row-cards">
+  <div class="col-12" data-documents-grid>
+    <article class="card">
+      <div class="card-body">
+        <div class="empty">
+          <div class="empty-header">--</div>
+          <p class="empty-title">Loading documents</p>
+          <p class="empty-subtitle text-secondary">
+            Waiting for the dashboard to return document-related activity.
+          </p>
         </div>
       </div>
-    </div>
-  </article>
-
-  {% include "cards/list.html" title="Automation prep" items=items %}
+    </article>
+  </div>
 </div>

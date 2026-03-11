@@ -1,8 +1,8 @@
 {
   "header": {
     "eyebrow": "Capital Matching Platform",
-    "status": "Preparation mode",
-    "statusDetail": "Ready for deal data loading"
+    "status": "Platform Connected",
+    "statusDetail": "Current activity is synchronized across the platform."
   },
   "overviewStats": [
     {
@@ -11,9 +11,9 @@
       "trend": "Dashboard modules staged"
     },
     {
-      "label": "Service connectors",
+      "label": "Platform Connections",
       "value": "04",
-      "trend": "Azure, Sheets, webhooks, timers"
+      "trend": "Current data sources active"
     },
     {
       "label": "Data readiness",

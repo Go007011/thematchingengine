@@ -21,13 +21,28 @@ interface Libs {
 
 const libsData = libs as Libs
 
+function resolveLibPath(packageName: string): string {
+	const candidates = [
+		join(__dirname, '..', `node_modules/${packageName}`),
+		join(__dirname, '..', '..', `node_modules/${packageName}`)
+	]
+
+	const resolvedPath = candidates.find(existsSync)
+
+	if (!resolvedPath) {
+		throw new Error(`Unable to locate ${packageName} in package-local or root node_modules.`)
+	}
+
+	return resolvedPath
+}
+
 emptyDirSync(join(__dirname, '..', 'dist/libs'))
 
 for (const name in libsData) {
 	const { npm } = libsData[name]
 
 	if (npm) {
-		const from = join(__dirname, '..', `node_modules/${npm}`)
+		const from = resolveLibPath(npm)
 		const to = join(__dirname, '..', `dist/libs/${npm}`)
 
 		// create dir in dist/libs

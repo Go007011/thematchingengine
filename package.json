@@ -1,8 +1,14 @@
 {
   "private": true,
   "description": "Capital matching dashboard prepared for application data loading.",
+  "workspaces": [
+    "core",
+    "preview"
+  ],
   "scripts": {
     "build": "turbo build",
+    "postbuild": "node .build/prepare-bolt-dist.mjs",
+    "preview": "serve dist -l 4173",
     "dev": "turbo dev",
     "clean": "turbo clean",
     "type-check": "turbo type-check",
@@ -10,6 +16,7 @@
   },
   "packageManager": "pnpm@10.27.0",
   "dependencies": {
+    "serve": "^14.2.4",
     "shx": "^0.4.0"
   },
   "devDependencies": {

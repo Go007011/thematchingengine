@@ -6,9 +6,15 @@ layout: base
   {% include "layout/sidebar.html" %}
   <div class="page-wrapper">
     {% include "layout/header.html" %}
-    <main id="content" class="page-body">
+    <main id="content" class="page-body page-body-overlap">
       <div class="container-xl">
-        <section class="module-shell" data-module-shell>
+        <section
+          class="module-shell module-shell-overlap py-3 py-md-4"
+          data-module-shell
+          data-dashboard-page="{{ menu_key | default: 'overview' }}"
+          data-azure-endpoint="{{ runtimeConfig.azureFunctionEndpoint }}"
+          data-enforcement-endpoint="{{ runtimeConfig.enforcementEngineEndpoint }}"
+        >
           {{ content }}
         </section>
       </div>

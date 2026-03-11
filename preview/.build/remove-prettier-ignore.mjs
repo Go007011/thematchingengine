@@ -16,7 +16,7 @@ function getHtmlFiles(dir) {
   })
 }
 
-getHtmlFiles('dist').forEach((file) => {
+getHtmlFiles('../dist').forEach((file) => {
   let content = readFileSync(file, 'utf8')
   let modified = false
 
