@@ -9,7 +9,9 @@ import { appConfig } from '../shared/e11ty/config.mjs'
 export default function (eleventyConfig) {
 	const environment = process.env.NODE_ENV || 'production'
 
-	appConfig(eleventyConfig)
+	appConfig(eleventyConfig, {
+		outputDirectory: process.env.PREVIEW_OUTPUT_DIR || 'dist'
+	})
 	appFilters(eleventyConfig)
 	appData(eleventyConfig)
 
